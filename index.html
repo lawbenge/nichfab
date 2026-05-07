@@ -21,46 +21,39 @@ body{background:#f1f3f4;font-family:'Barlow',sans-serif;min-height:100vh}
 .btn:hover{background:#e8eaed}
 .btn.primary{background:#1a73e8;color:#fff;border-color:#1a73e8;font-weight:600}
 .btn.primary:hover{background:#1557b0}
-.btn.danger{background:#d93025;color:#fff;border-color:#d93025}
 .status-bar{font-size:11px;color:#5f6368;padding:4px 12px;background:#f8f9fa;border-bottom:1px solid #e0e0e0;display:flex;gap:16px;align-items:center}
 .tbl-wrap{overflow:auto;max-height:calc(100vh - 220px)}
 table{border-collapse:collapse;width:100%;min-width:1000px;font-size:12px}
 th{background:#f8f9fa;border-right:1px solid #e0e0e0;border-bottom:2px solid #bdc1c6;padding:6px 10px;text-align:left;font-size:11px;font-weight:700;color:#202124;white-space:nowrap;position:sticky;top:0;z-index:2;cursor:pointer;user-select:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.5px}
 th:hover{background:#e8eaed}
-th.rn{position:sticky;top:0;left:0;z-index:3;width:40px;text-align:center}
 td{border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:4px 10px;color:#202124;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:300px}
-td.rn{background:#f8f9fa;color:#5f6368;font-size:11px;text-align:center;width:40px;position:sticky;left:0}
+td.rn{background:#f8f9fa;color:#5f6368;font-size:11px;text-align:center;width:40px}
 tr:hover td{background:#e8f0fe}
-tr:hover td.rn{background:#d2e3fc}
 tr.sel td{background:#c2d7f5}
 tr.new-row td{animation:flashGreen 3s ease-out forwards}
-@keyframes flashGreen{0%{background:#b7e1cd}50%{background:#ceead6}100%{background:inherit}}
-.chip{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.5px}
+@keyframes flashGreen{0%{background:#b7e1cd}100%{background:inherit}}
+.chip{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Barlow Condensed',sans-serif}
 .chip-green{background:#e6f4ea;color:#137333}
 .chip-blue{background:#e8f0fe;color:#1558d6}
-.chip-yellow{background:#fef7e0;color:#b06000}
-.tabs{background:#f8f9fa;border-top:1px solid #e0e0e0;padding:2px 12px 0;display:flex;gap:4px}
-.tab{background:#fff;border:1px solid #dadce0;border-bottom:none;padding:5px 16px;font-size:12px;color:#1558d6;border-radius:3px 3px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.5px}
-.footer{background:#f8f9fa;border-top:1px solid #e0e0e0;padding:4px 12px;font-size:11px;color:#5f6368;display:flex;justify-content:space-between;align-items:center}
+.tabs{background:#f8f9fa;border-top:1px solid #e0e0e0;padding:2px 12px 0;display:flex}
+.tab{background:#fff;border:1px solid #dadce0;border-bottom:none;padding:5px 16px;font-size:12px;color:#1558d6;border-radius:3px 3px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:600}
+.footer{background:#f8f9fa;border-top:1px solid #e0e0e0;padding:4px 12px;font-size:11px;color:#5f6368;display:flex;justify-content:space-between}
 .loading{text-align:center;padding:60px;color:#5f6368;font-size:14px}
-.loading .spinner{width:32px;height:32px;border:3px solid #e0e0e0;border-top-color:#1a73e8;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px}
+.spinner{width:32px;height:32px;border:3px solid #e0e0e0;border-top-color:#1a73e8;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .msg{font-size:12px;font-weight:600;padding:4px 10px;border-radius:3px}
 .msg.ok{background:#e6f4ea;color:#137333}
 .msg.err{background:#fce8e6;color:#d93025}
 .msg.info{background:#e8f0fe;color:#1558d6}
-
-/* MODAL */
 .overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center}
 .overlay.open{display:flex}
 .modal{background:#fff;border-radius:6px;padding:24px;width:480px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
-.modal h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:#202124;letter-spacing:0.5px;border-bottom:2px solid #e88c00;padding-bottom:8px}
+.modal h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:#202124;border-bottom:2px solid #e88c00;padding-bottom:8px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.form-row{margin-bottom:0}
-.form-row.full{grid-column:1/-1}
 .form-row label{display:block;font-size:10px;color:#5f6368;margin-bottom:3px;font-weight:700;letter-spacing:0.5px;font-family:'Barlow Condensed',sans-serif}
 .form-row input,.form-row select{width:100%;border:1px solid #dadce0;border-radius:3px;padding:6px 8px;font-size:13px;outline:none;font-family:'Barlow',sans-serif}
-.form-row input:focus{border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
+.form-row input:focus{border-color:#1a73e8}
+.form-row.full{grid-column:1/-1}
 .modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;padding-top:12px;border-top:1px solid #e0e0e0}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;padding:10px 12px;background:#f8f9fa;border-bottom:1px solid #e0e0e0}
 .stat{background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:8px 12px;text-align:center}
@@ -69,12 +62,10 @@ tr.new-row td{animation:flashGreen 3s ease-out forwards}
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="logo">NICHOLS <span>FAB</span> — JOB RECORDING</div>
   <div class="header-right" id="headerSync">Connecting...</div>
 </div>
-
 <div class="gs-wrap">
   <div class="stats">
     <div class="stat"><div class="stat-label">TOTAL JOBS</div><div class="stat-value" id="statTotal">—</div></div>
@@ -94,22 +85,19 @@ tr.new-row td{animation:flashGreen 3s ease-out forwards}
     <button class="btn" onclick="loadData()">↻ Refresh</button>
     <span id="msgBox"></span>
   </div>
-  <div class="status-bar">
-    <span id="cnt">Loading...</span>
-    <span id="synced"></span>
-  </div>
+  <div class="status-bar"><span id="cnt">Loading...</span><span id="synced"></span></div>
   <div id="loadMsg" class="loading"><div class="spinner"></div>Connecting to Google Sheets...</div>
   <div class="tbl-wrap" id="tblWrap" style="display:none">
     <table>
       <thead><tr>
-        <th class="rn">#</th>
+        <th style="width:40px">#</th>
         <th onclick="doSort(0)">EST #</th>
         <th onclick="doSort(1)" style="min-width:300px">CUSTOMER / JOB</th>
         <th onclick="doSort(2)">CONTACT DATE</th>
         <th onclick="doSort(3)">DATE DUE</th>
         <th onclick="doSort(4)">NEEDS TRACKING</th>
         <th onclick="doSort(5)">TRACKING COMPLETE</th>
-        <th onclick="doSort(6)" style="min-width:180px">TAKEN BY WHOM</th>
+        <th onclick="doSort(6)" style="min-width:180px">TAKEN BY</th>
         <th onclick="doSort(7)">PHONE #</th>
         <th onclick="doSort(8)">EST #</th>
         <th onclick="doSort(9)">PO #</th>
@@ -119,19 +107,14 @@ tr.new-row td{animation:flashGreen 3s ease-out forwards}
     </table>
   </div>
   <div class="tabs"><div class="tab">2026 JOB RECORDING</div></div>
-  <div class="footer">
-    <span id="footerLeft"></span>
-    <span>Nichols Fabrication &mdash; Live Google Sheets</span>
-  </div>
+  <div class="footer"><span id="footerLeft"></span><span>Nichols Fabrication — Live Google Sheets</span></div>
 </div>
-
-<!-- ADD JOB MODAL -->
 <div class="overlay" id="overlay">
   <div class="modal">
-    <h3 id="modalTitle">Add New Job</h3>
+    <h3>Add New Job</h3>
     <div class="form-grid">
-      <div class="form-row"><label>EST # / JOB NUMBER</label><input id="fEst" placeholder="e.g. 26208"></div>
-      <div class="form-row"><label>DATE OF CONTACT</label><input id="fContact" placeholder="e.g. 5-6"></div>
+      <div class="form-row"><label>EST # / JOB NUMBER</label><input id="fEst" placeholder="e.g. 26209"></div>
+      <div class="form-row"><label>DATE OF CONTACT</label><input id="fContact" placeholder="e.g. 5-7"></div>
       <div class="form-row full"><label>CUSTOMER / JOB DESCRIPTION</label><input id="fCustomer" placeholder="Customer name and job description"></div>
       <div class="form-row"><label>DATE DUE</label><input id="fDue" placeholder="e.g. 5-15"></div>
       <div class="form-row"><label>TAKEN BY WHOM</label><input id="fTaken" placeholder="e.g. DARCY, HUNTER"></div>
@@ -151,17 +134,16 @@ tr.new-row td{animation:flashGreen 3s ease-out forwards}
     </div>
   </div>
 </div>
-
 <script>
-const KEY='AIzaSyCvFCAFnF9mP313dxO3sAXdTsQQUUNyp0A';
+const API_KEY='AIzaSyCvFCAFnF9mP313dxO3sAXdTsQQUUNyp0A';
 const SID='1krGfDJQ9jnuD3ou9ZLpelXfl03vFG3u9rgTcaCS486c';
-const RANGE='2026 JOB RECORDING!A:K';
+const TAB='2026 JOB RECORDING';
+const WEBHOOK='https://script.google.com/macros/s/AKfycbxIEprn7XxDqh5H4VwuW9P83FbwygXgUWc-PqSUCuuuM6lT6as_2uSCL0TXlJEZiaM/exec';
 let rows=[],sortCol=0,sortAsc=true,newRowEst='';
 
 function showMsg(text,type){
   const b=document.getElementById('msgBox');
-  b.className='msg '+type;
-  b.textContent=text;
+  b.className='msg '+type;b.textContent=text;
   if(type==='ok')setTimeout(()=>{b.textContent='';b.className='';},4000);
 }
 
@@ -170,7 +152,7 @@ async function loadData(){
   document.getElementById('tblWrap').style.display='none';
   document.getElementById('headerSync').textContent='Syncing...';
   try{
-    const url=`https://sheets.googleapis.com/v4/spreadsheets/${SID}/values/${encodeURIComponent(RANGE)}?key=${KEY}`;
+    const url=`https://sheets.googleapis.com/v4/spreadsheets/${SID}/values/${encodeURIComponent(TAB+'!A:K')}?key=${API_KEY}`;
     const r=await fetch(url);
     const d=await r.json();
     if(d.error)throw new Error(d.error.message);
@@ -180,10 +162,9 @@ async function loadData(){
     const now=new Date().toLocaleTimeString();
     document.getElementById('synced').textContent='Last synced: '+now;
     document.getElementById('headerSync').textContent='Live — '+now;
-    updateStats();
-    render();
+    updateStats();render();
   }catch(e){
-    document.getElementById('loadMsg').innerHTML='<div style="color:#d93025;font-size:14px">Error: '+e.message+'<br><br><button onclick="loadData()" style="padding:8px 16px;border:1px solid #dadce0;border-radius:3px;cursor:pointer;font-size:13px">Retry</button></div>';
+    document.getElementById('loadMsg').innerHTML='<div style="color:#d93025">Error: '+e.message+'<br><br><button onclick="loadData()" style="padding:8px 16px;border:1px solid #dadce0;border-radius:3px;cursor:pointer">Retry</button></div>';
     document.getElementById('headerSync').textContent='Connection error';
   }
 }
@@ -224,8 +205,8 @@ function render(){
     const isNew=newRowEst&&r[0]===newRowEst;
     return`<tr class="${isNew?'new-row':''}" onclick="sel(this)">
       <td class="rn">${i+1}</td>
-      <td style="font-weight:700;color:#1558d6;font-family:'Barlow Condensed',sans-serif;font-size:13px">${r[0]||''}</td>
-      <td title="${(r[1]||'').replace(/"/g,'&quot;')}">${r[1]||''}</td>
+      <td style="font-weight:700;color:#1558d6;font-family:'Barlow Condensed',sans-serif">${r[0]||''}</td>
+      <td title="${(r[1]||'').replace(/"/g,'')}">${r[1]||''}</td>
       <td style="color:#5f6368">${r[2]||''}</td>
       <td style="color:#5f6368">${r[3]||''}</td>
       <td>${chip||(r[4]?'<span class="chip" style="background:#f1f3f4;color:#5f6368">'+r[4]+'</span>':'')}</td>
@@ -239,25 +220,17 @@ function render(){
   }).join('');
 }
 
-function sel(el){
-  document.querySelectorAll('tr.sel').forEach(e=>e.classList.remove('sel'));
-  el.classList.add('sel');
-}
-
+function sel(el){document.querySelectorAll('tr.sel').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');}
 function openModal(){
   ['fEst','fCustomer','fContact','fDue','fTaken','fPhone','fPo','fInvoice'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('fTracking').value='';
   document.getElementById('fTrackDone').value='';
-  document.getElementById('modalTitle').textContent='Add New Job';
   document.getElementById('overlay').classList.add('open');
   document.getElementById('fEst').focus();
 }
-
 function closeModal(){document.getElementById('overlay').classList.remove('open');}
-
-document.getElementById('overlay').addEventListener('click',function(e){
-  if(e.target===this)closeModal();
-});
+document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 async function saveRow(){
   const est=document.getElementById('fEst').value.trim();
@@ -265,8 +238,7 @@ async function saveRow(){
   if(!est){document.getElementById('fEst').focus();return;}
   if(!customer){document.getElementById('fCustomer').focus();return;}
   const row=[
-    est,
-    customer,
+    est,customer,
     document.getElementById('fContact').value,
     document.getElementById('fDue').value,
     document.getElementById('fTracking').value,
@@ -280,26 +252,22 @@ async function saveRow(){
   showMsg('Saving...','info');
   closeModal();
   try{
-    const url=`https://sheets.googleapis.com/v4/spreadsheets/${SID}/values/${encodeURIComponent(RANGE)}:append?valueInputOption=USER_ENTERED&key=${KEY}`;
-    const resp=await fetch(url,{
+    const resp=await fetch(WEBHOOK,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({values:[row]})
+      headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify({action:'append',sheetId:SID,tabName:TAB,row:row})
     });
     const d=await resp.json();
-    if(d.error)throw new Error(d.error.message);
+    if(!d.success)throw new Error(d.error||d.message);
     newRowEst=est;
     rows.push(row);
-    updateStats();
-    render();
+    updateStats();render();
     showMsg('Job '+est+' saved!','ok');
-    setTimeout(()=>{newRowEst='';render();},4000);
+    setTimeout(()=>{newRowEst='';loadData();},3000);
   }catch(e){
     showMsg('Save failed: '+e.message,'err');
   }
 }
-
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 loadData();
 </script>
 </body>
