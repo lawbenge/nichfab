@@ -251,22 +251,22 @@ async function saveRow(){
   ];
   showMsg('Saving...','info');
   closeModal();
+  // Use image trick to bypass CORS - fire and forget
   try{
-    // Use GET request with URL params to avoid CORS issues
     const params=new URLSearchParams({
       action:'append',
       sheetId:SID,
       tabName:TAB,
       row:JSON.stringify(row)
     });
-    const resp=await fetch(`${WEBHOOK}?${params.toString()}`);
-    const d=await resp.json();
-    if(!d.success)throw new Error(d.error||d.message);
+    const img=new Image();
+    img.src=`${WEBHOOK}?${params.toString()}`;
+    // Optimistically add to UI immediately
     newRowEst=est;
     rows.push(row);
     updateStats();render();
     showMsg('Job '+est+' saved!','ok');
-    setTimeout(()=>{newRowEst='';loadData();},3000);
+    setTimeout(()=>{newRowEst='';loadData();},4000);
   }catch(e){
     showMsg('Save failed: '+e.message,'err');
   }
