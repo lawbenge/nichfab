@@ -138,7 +138,7 @@ tr.new-row td{animation:flashGreen 3s ease-out forwards}
 const API_KEY='AIzaSyCvFCAFnF9mP313dxO3sAXdTsQQUUNyp0A';
 const SID='1krGfDJQ9jnuD3ou9ZLpelXfl03vFG3u9rgTcaCS486c';
 const TAB='2026 JOB RECORDING';
-const WEBHOOK='https://script.google.com/macros/s/AKfycbxIEprn7XxDqh5H4VwuW9P83FbwygXgUWc-PqSUCuuuM6lT6as_2uSCL0TXlJEZiaM/exec';
+const WEBHOOK='https://script.google.com/macros/s/AKfycbxh0BmUY1TOKiCScpulMX5eyCajVKKV0GJ1Uasu95y5dMcOZ3_SWvNd4cyif8AMGQg/exec';
 let rows=[],sortCol=0,sortAsc=true,newRowEst='';
 
 function showMsg(text,type){
@@ -254,7 +254,7 @@ async function saveRow(){
   try{
     const resp=await fetch(WEBHOOK,{
       method:'POST',
-      headers:{'Content-Type':'text/plain'},
+      headers:{'Content-Type':'text/plain'},mode:'no-cors',
       body:JSON.stringify({action:'append',sheetId:SID,tabName:TAB,row:row})
     });
     const d=await resp.json();
